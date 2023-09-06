@@ -58,7 +58,7 @@ func main() {
 		check(err)
 		fmt.Printf("[autovpn] running openvpn\n")
 
-		cmd := exec.Command("sudo", "openvpn", "--data-ciphers", "\"AES-256-CBC:AES-256-GCM:ARIA-256-CBC:ARIA-256-GCM:CAMELLIA-256-CBC:CHACHA20-POLY1305:AES-128-CBC:AES-128-GCM:CAMELLIA-128-CBC:SM4-CBC:SM4-GCM\"", "--config", "/tmp/openvpnconf")
+		cmd := exec.Command("sudo", "openvpn", "--data-ciphers", "\"AES-256-CBC:AES-256-GCM\"", "--config", "/tmp/openvpnconf")
 		cmd.Stdout = os.Stdout
 
 		c := make(chan os.Signal, 2)
